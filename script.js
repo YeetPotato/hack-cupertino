@@ -18,7 +18,7 @@ const chatSendBtn = document.getElementById('chat-send-btn');
 const chatMessages = document.getElementById('chat-messages');
 
 // OpenAI API key
-const API_KEY = "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";
+const API_KEY = "your_api_key";
 
 // Bin explanations for display at the bottom
 // const binExplanations = {
