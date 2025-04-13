@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BinBuddy</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BinBuddy</h1>
+            <p>Point your camera at an object to find out where it should go</p>
+            <button id="ask-question-btn"><i class="fas fa-question-circle"></i> Ask a Question</button>
+        </header>
+        
+        <main>
+            <div class="camera-container">
+                <video id="camera" autoplay playsinline></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+                <div class="controls">
+                    <button id="capture-btn">Identify Object</button>
+                </div>
+            </div>
+            
+            <div class="result-container" id="result-container">
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing image...</p>
+                </div>
+                <div class="result" id="result" style="display: none;">
+                    <h2 id="bin-header" style="display: none;">This goes in the <span id="bin-type">...</span></h2>
+                    <div id="explanation"></div>
+                </div>
+                <div id="fun-fact" class="fun-fact"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>BinBuddy &copy; 2025</p>
+        </footer>
+    </div>
+
+    <!-- Chatbot modal -->
+    <div id="chatbot-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Recycling Assistant</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="chat-container">
+                <div id="chat-messages">
+                    <div class="bot-message">
+                        <div class="avatar"><i class="fas fa-robot"></i></div>
+                        <div class="message">Hello! I'm your recycling assistant. Ask me anything about waste sorting, recycling, or sustainability.</div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Ask a question about recycling...">
+                    <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
